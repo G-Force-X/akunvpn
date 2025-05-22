@@ -1,27 +1,31 @@
 proxies:
-  - name: Root
-    server: quiz.vidio.com
-    port: 443
-    type: vmess
-    password: d6c34c12-469f-4b70-b6b9-f063854bb9d0
-    skip-cert-verify: true
-    sni: quiz.vidio.com.us.vidio.cloud
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
+  - name: Trojan-udin
+  server: quiz.vidio.com
+  port: 443
+  type: trojan
+  password: eaeb1c06-be23-4ee9-974a-15de4c156ccd
+  network: ws
+  sni: quiz.vidio.com.us.vidio.cloud
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan-ws
+    headers:
         Host: quiz.vidio.com.us.vidio.cloud
     udp: true
-  - name: AKUN2
-    server: quiz.vidio.com
-    port: 443
-    type: vmess
-    password: d6c34c12-469f-4b70-b6b9-f063854bb9d0
-    skip-cert-verify: true
-    sni: quiz.vidio.com.us.vidio.cloud
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: quiz.vidio.com.us.vidio.cloud
-    udp: true
+  - name: Vmess-root
+  type: vmess
+  server: quiz.vidio.com
+  port: 443
+  uuid: d6c34c12-469f-4b70-b6b9-f063854bb9d0
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: vpn.vidio.cloud
+  network: ws
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: vpn.vidio.cloud
