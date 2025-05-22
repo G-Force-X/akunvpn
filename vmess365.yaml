@@ -29,3 +29,17 @@ proxies:
     path: /vmess
     headers:
       Host: vpn.vidio.cloud
+  - name: Vless-admin
+  server: quiz.int.vidio.com
+  port: 443
+  type: vless
+  uuid: 3579e224-a149-4634-9ac5-16cf3e206b8c
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: quiz.int.vidio.com
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: vpn.vidio.cloud
